@@ -1,0 +1,21 @@
+- generic [ref=f2e3]:
+  - generic [ref=f2e4]:
+    - link "决策引擎" [ref=f2e6] [cursor=pointer]:
+      - /url: /
+    - menubar [ref=f2e15]:
+      - link [ref=f2e16] [cursor=pointer]:
+        - /url: /platform
+        - menuitem "平台运营" [ref=f2e17]
+  - generic [ref=f2e26]:
+    - button [ref=f2e27] [cursor=pointer]
+    - navigation "面包屑" [ref=f2e31]:
+      - generic [ref=f2e32]:
+        - link "平台运营":
+          - /url: /
+    - generic [ref=f2e33]:
+      - button [ref=f2e34] [cursor=pointer]
+      - button [ref=f2e38] [cursor=pointer]
+      - generic [ref=f2e42]: 平台
+      - button "超 超级管理员" [ref=f2e50] [cursor=pointer]:
+        - generic [ref=f2e51]: 超
+        - generic [ref=f2e52]: 超级管理员

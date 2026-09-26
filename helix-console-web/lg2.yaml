@@ -1,0 +1,38 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e10]:
+      - generic [ref=e11]: 决策引擎
+      - generic [ref=e12]: Helix Rules X6
+    - generic [ref=e13]:
+      - heading "可视化决策流 让风控策略所见即所得" [level=1] [ref=e14]: 可视化决策流让风控策略所见即所得
+      - paragraph [ref=e15]: 基于 AntV X6 的流程编排，配合规则、评分卡与名单库，构建可执行的决策引擎。
+    - list [ref=e16]:
+      - listitem [ref=e17]: 拖拽式决策流编排
+      - listitem [ref=e19]: 规则表达式自动生成
+      - listitem [ref=e21]: 评分卡多维度加权
+      - listitem [ref=e23]: 批量测试与结果回溯
+  - generic [ref=e26]:
+    - generic [ref=e27]:
+      - heading "欢迎回来" [level=2] [ref=e28]
+      - paragraph [ref=e29]: 请登录以继续使用决策引擎
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]: 账号
+        - textbox "请输入账号" [ref=e39]
+      - generic [ref=e40]:
+        - generic [ref=e41]: 密码
+        - textbox "请输入密码" [ref=e49]
+      - button "登 录" [ref=e50] [cursor=pointer]
+    - button [ref=e52] [cursor=pointer]
+    - generic [ref=e56]:
+      - generic [ref=e57]: 演示账号（密码均为 Init@1234）
+      - generic [ref=e58]:
+        - button "超级管理员（平台） admin" [ref=e59] [cursor=pointer]:
+          - generic [ref=e60]: 超级管理员（平台）
+          - generic [ref=e61]: admin
+        - button "租户用户·策略师 strategist" [ref=e62] [cursor=pointer]:
+          - generic [ref=e63]: 租户用户·策略师
+          - generic [ref=e64]: strategist
+        - button "租户用户·审批员 approver" [ref=e65] [cursor=pointer]:
+          - generic [ref=e66]: 租户用户·审批员
+          - generic [ref=e67]: approver

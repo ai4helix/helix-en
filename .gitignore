@@ -1,0 +1,27 @@
+# Build artifacts
+target/
+dist/
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Tooling / local working files
+.codebuddy/
+.playwright-cli/
+.DS_Store
+
+# One-off scripts & intermediates (not part of the project)
+extract_cn.py
+translate_dump.py
+scan_db_cn.py
+strip_cn_comments.py
+cn_strings.txt
+cn_runs.txt
+_cn_comment_backup.tar.gz

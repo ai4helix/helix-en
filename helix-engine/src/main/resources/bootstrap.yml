@@ -1,0 +1,26 @@
+#
+spring:
+  profiles:
+    active: dev
+  application:
+    name: helix-engine
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: ${spring.profiles.active}
+        group: DEFAULT_GROUP
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP
+        namespace: ${spring.profiles.active}
+        prefix: ${spring.application.name}
+        enabled: true
+    refresh:
+      never-refreshable: com.alibaba.druid.pool.DruidDataSource
+
+logging:
+  config: classpath:logback-spring.xml
+  file:
+    path: ${LOG_PATH:${LOGGING_FILE_PATH:logs/}}

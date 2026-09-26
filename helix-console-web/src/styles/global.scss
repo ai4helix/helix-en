@@ -1,0 +1,195 @@
+@use './tokens.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-snug);
+  color: var(--c-text);
+  background: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior: none;
+  transition: background-color var(--dur-normal) var(--ease-standard),
+    color var(--dur-normal) var(--ease-standard);
+}
+
+h1, h2, h3, h4, h5, h6, p, figure {
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--c-primary);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+html.dark {
+  --c-bg: #1c1c1e;
+  --c-surface: #2c2c2e;
+  --c-surface-raised: rgba(44, 44, 46, 0.72);
+  --c-surface-sunken: #232325;
+  --c-fill-quaternary: rgba(120, 120, 128, 0.12);
+  --c-fill-tertiary: rgba(120, 120, 128, 0.2);
+  --c-fill-secondary: rgba(120, 120, 128, 0.28);
+
+  --c-text: #f5f5f7;
+  --c-text-secondary: #a1a1a6;
+  --c-text-tertiary: #8e8e93;
+  --c-text-quaternary: #636366;
+
+  --c-border: rgba(255, 255, 255, 0.1);
+  --c-border-strong: rgba(255, 255, 255, 0.18);
+  --c-separator: rgba(84, 84, 88, 0.5);
+
+  --c-primary-soft: rgba(10, 132, 255, 0.18);
+  --c-primary-ring: rgba(10, 132, 255, 0.3);
+
+  --sh-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --sh-sm: 0 2px 8px rgba(0, 0, 0, 0.36), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --sh-md: 0 8px 24px rgba(0, 0, 0, 0.44), 0 2px 6px rgba(0, 0, 0, 0.28);
+  --sh-lg: 0 16px 48px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.36);
+  --sh-inset: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-fill-secondary);
+  border: 3px solid transparent;
+  background-clip: content-box;
+  border-radius: var(--r-full);
+
+  &:hover {
+    background: var(--c-text-quaternary);
+    background-clip: content-box;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 2px;
+  border-radius: var(--r-xs);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+::selection {
+  background: var(--c-primary-ring);
+  color: var(--c-text);
+}
+
+.fade-transform-enter-active,
+.fade-transform-leave-active {
+  transition: opacity var(--dur-normal) var(--ease-decelerate),
+    transform var(--dur-normal) var(--ease-decelerate);
+}
+
+.fade-transform-enter-from {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.x6-graph {
+  background: transparent;
+}
+
+.x6-widget-selection-box {
+  border: 1px solid var(--c-primary);
+  background: var(--c-primary-soft);
+  border-radius: var(--r-md);
+}
+
+.x6-widget-selection-inner {
+  border: none;
+  box-shadow: none;
+}
+
+.x6-widget-snapline-vertical,
+.x6-widget-snapline-horizontal {
+  border-color: var(--c-primary);
+  border-style: solid;
+  opacity: 0.9;
+}
+
+.x6-port-body {
+  transition: r var(--dur-fast) var(--ease-spring);
+}
+
+#nprogress .bar {
+  background: var(--c-primary) !important;
+  height: 2px !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--c-primary), 0 0 5px var(--c-primary) !important;
+}
+
+.u-glass {
+  background: var(--c-surface-raised);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.u-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.u-scroll-y {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.page-container {
+  padding: var(--sp-5);
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.page-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-xs);
+}

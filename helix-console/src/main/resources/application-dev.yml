@@ -1,0 +1,75 @@
+server:
+  port: 8286
+  servlet:
+    context-path: /
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 25MB
+  redis:
+    host: ${SPRING_REDIS_HOST:127.0.0.1}
+    port: ${SPRING_REDIS_PORT:6379}
+    password: ${SPRING_REDIS_PASSWORD:redis2sh}
+    timeout: 3000ms
+    database: 2
+
+helix:
+  datasource:
+    sys:
+      url: ${HELIX_DS_SYS_URL:jdbc:mysql://127.0.0.1:3306/helix_en_console?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai}
+      username: ${HELIX_DS_SYS_USER:root}
+      password: ${HELIX_DS_SYS_PASS:123456}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 2
+      min-idle: 2
+      max-active: 20
+      max-wait: 6000
+      validation-query: SELECT 1
+      test-while-idle: true
+    engine:
+      url: ${HELIX_DS_ENGINE_URL:jdbc:mysql://127.0.0.1:3306/helix_en_engine?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai}
+      username: ${HELIX_DS_ENGINE_USER:root}
+      password: ${HELIX_DS_ENGINE_PASS:123456}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 2
+      min-idle: 2
+      max-active: 20
+      max-wait: 6000
+      validation-query: SELECT 1
+      test-while-idle: true
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 2
+    timeout: 3000
+
+  register:
+    sms:
+      mock-code:
+      debug-return: true
+    tenant-admin-role-code: ROLE_TENANT_ADMIN
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: -1
+      logic-not-delete-value: 1
+
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 30000
+
+springdoc:
+  swagger-ui:
+    path: /doc.html
+
+logging:
+  level:
+    com.helix.console: debug
